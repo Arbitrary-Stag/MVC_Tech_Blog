@@ -6,13 +6,13 @@ class Comment extends Model {}
 Comment.init(
   {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
+      primaryKey: true
     },
     comment: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     date_created: {
       type: DataTypes.DATE,
@@ -20,14 +20,14 @@ Comment.init(
       defaultValue: DataTypes.NOW,
     },
     post_id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID,
         references: {
           model: 'post',
           key: 'id',
         },
       },
     user_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.UUID,
       references: {
         model: 'user',
         key: 'id',
@@ -36,9 +36,7 @@ Comment.init(
   },
   {
     sequelize,
-    timestamps: false,
     freezeTableName: true,
-    underscored: true,
     modelName: 'comment',
   }
 );
