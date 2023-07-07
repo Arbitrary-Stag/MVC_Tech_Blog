@@ -7,5 +7,5 @@ const editpostRoutes = require('./editpostRoutes');
 router.use('/users', userRoutes);
 router.use('/posts', postRoutes);
 router.use('./comment', commentRoutes);
-router.use('./editpost', editpostRoutes);
+router.use('./editposts', editpostRoutes);
 module.exports = router;

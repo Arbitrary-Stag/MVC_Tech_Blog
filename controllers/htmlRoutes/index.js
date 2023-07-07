@@ -62,11 +62,8 @@ router.get('/posts/:id', async (req, res) => {
 
 router.get('/editposts/:id',withAuth,async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id, {
-    });
-
+    const postData = await Post.findByPk(req.params.id, {});
     const post = postData.get({ plain: true });
-
 
     res.render('editpost', {
       ...post,
@@ -77,14 +74,13 @@ router.get('/editposts/:id',withAuth,async (req, res) => {
   }
 });
 
-
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: BlogPost }],
+      include: [{ model: Post }],
     });
 
     const user = userData.get({ plain: true });

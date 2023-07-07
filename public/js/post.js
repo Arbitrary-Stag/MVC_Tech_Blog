@@ -21,9 +21,8 @@ const newCommentHandler = async (event) => {
         alert('Failed to create comment');
       }
     }
-  };
-  
+};
 
-  document
-    .querySelector('.new-comment-form')
-    .addEventListener('submit', newCommentHandler);
+document
+  .querySelector('.new-comment-form')
+  .addEventListener('submit', newCommentHandler);

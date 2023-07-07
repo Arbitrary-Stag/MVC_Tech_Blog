@@ -8,7 +8,7 @@ const updateFormHandler = async (event) => {
     const post_id = url.substring(url.lastIndexOf('/') + 1);
     
     if (title && content) {
-      const response = await fetch(`/api/editpost/${post_id}`, {
+      const response = await fetch(`/api/editposts/${post_id}`, {
         method: 'PUT',
         body: JSON.stringify({ title, content }),
         headers: {
