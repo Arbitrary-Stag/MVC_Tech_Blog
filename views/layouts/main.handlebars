@@ -11,11 +11,11 @@
 
 <body>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
+    <header class="display-flex justify-space-between align-center p-2 nav-color">
       <h1>
-        <a href="/">Buck's Tech Blog</a>
+        <a href="/" class="ml-5">Buck's Tech Blog</a>
       </h1>
-      <nav>
+      <nav class="mr-5">
          <a href="/">Home</a> |
          <a href="/dashboard">Dashboard</a> |
          <!-- Conditionally render login or logout links -->
@@ -26,7 +26,7 @@
          {{/if}}
        </nav>
     </header>
-    <main class="container container-fluid mt-5">
+    <main class="container">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
