@@ -1,40 +1,55 @@
-<div class="box">
-  <h2>{{title}}</h2>
-  <p>{{content}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-
-
- {{#if comments.length}}
-  <div class="row">
-    <div class="col-md-12">
-      <h4>Comments:</h4>
-      {{#each comments as |comment|}}
-      <div class="row mb-2">
-        <div class="col-md-12">
-          <p>{{comment.comment}}</p>
-          <p>- {{comment.user.name}} on {{format_date comment.date_created}}</p>
-        </div>
-      </div>
-      {{/each}}
+<div class="card-div">
+  <div class="new-card card-border">
+    <div class="new-card-header">
+      <h2 class="start">{{title}}</h2>
+      <p>Created by {{user.name}} on {{format_date date_created}}</p>
+    </div>
+    <div>
+      <p class="start">{{content}}</p>
     </div>
   </div>
-  {{/if}}
-
-
-{{#if logged_in}}
-<div class="row mt-4">
-  <div class="col-md-6">
-    <form class="form new-comment-form">
-      <div class="form-group">
-        <label for="comment-full">Write Comment:</label>
-        <textarea class="form-input" id="comment-full" name="comment-full"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Add Comment</button>
-      </div>
-    </form>
-  </div>
-{{/if}}
 </div>
+
+    {{#if comments.length}}
+     <div class="card-div">
+       <div class="new-card card-border">
+          <div class="new-card-header ">
+            <h4 class="start">Comments:</h4>
+          </div>
+         {{#each comments as |comment|}}
+         <div class="card-div">
+            <div class="new-card card-border">
+              <div class="new-card-header">
+                <div class="start">
+                  <h5>{{comment.user.name}} on {{format_date comment.date_created}}</h5>
+                </div>
+              </div>
+              <div>
+                <p class="start">{{comment.comment}}</p>
+              </div>
+            </div>
+         </div>
+         {{/each}}
+       </div>
+     </div>
+    {{/if}}
+
+
+    {{#if logged_in}}
+    <div class="card-div">
+      <div class="login">
+        <form class="form new-comment-form">
+          <div class="form-group">
+            <label for="comment-full">Write a Comment:</label>
+            <textarea class="form-input" id="comment-full" name="comment-full"></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-info">Add Comment</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    {{/if}}
+
 
 <script src="../js/post.js"></script>

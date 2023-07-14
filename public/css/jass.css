@@ -19,6 +19,7 @@ html {
  */
 body {
   margin: 0;
+  padding-bottom: 2rem;
 }
 
 /**
@@ -986,6 +987,7 @@ a:hover {
 
 .btn:hover {
   background-color: #cecece;
+  cursor: pointer;
 }
 
 .btn.btn-squared {
@@ -1024,6 +1026,7 @@ a:hover {
 
 .btn.btn-danger:hover {
   background-color: #ee8294;
+  cursor: pointer;
 }
 
 .btn.btn-info {

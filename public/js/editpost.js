@@ -31,7 +31,7 @@ const cancelButtonHandler = (event) => {
 };
 
 document
-  .querySelector('.update-blogpost-form')
+  .querySelector('.update-post-form')
   .addEventListener('submit', updateFormHandler);
 
 document
