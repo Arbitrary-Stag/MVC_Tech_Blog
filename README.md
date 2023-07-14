@@ -24,7 +24,7 @@ If you would like to learn more about this license, please click the link.
 This code was written by William Weaver with the assistance of class materials.
 
 ## Deployed App
-
+https://tech-blog-ww-254f1a693c35.herokuapp.com/
 
 ## Screenshot
 ![tech-blog](https://github.com/Arbitrary-Stag/MVC_Tech_Blog/assets/120620818/f508351b-ff60-4f17-806c-d69b39d58730)
